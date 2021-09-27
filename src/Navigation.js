@@ -3,7 +3,7 @@ import logo from './logo.png';
 
 export default function Navigation() {
     return (
-        <div class="container-fluid px-md-2 px-xl-5">
+        <div class="container-fluid px-3">
             <a className="navbar-brand" href="/">
                 <img src={logo} className="App-logo" alt="logo" width="350px" />
             </a>

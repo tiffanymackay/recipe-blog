@@ -1,5 +1,6 @@
 import Navigation from "./Navigation"
 import './App.css';
+import Categories from "./Categories";
 
 function App() {
   return (
@@ -10,6 +11,15 @@ function App() {
           </nav>
           <hr className="d-none d-sm-block" />
       </header>
+      <main>
+        <Categories />
+      </main>
+      <hr className="d-none d-sm-block" />
+      <footer className="text-center">
+        <small>
+          All Images Copyright © Tiffany Mackay, 2021. All Rights Reserved
+        </small>
+      </footer>
     </div>
   );
 }
