@@ -2,19 +2,20 @@ import React from "react";
 import bites from "./bites.png";
 import cakes from "./cakes.png";
 import brews from "./brews.png";
+import "./Categories.css";
 
 export default function Categories() {
     return (
-        <div className="container">
+        <div className="container category-block">
             <div className="row">
-                <div className="col-4">
-                    <img src={bites} className="category-img" alt="bites category" width="300px" />
+                <div className="col">
+                    <img src={bites} className="category-img img-fluid" alt="bites category" />
                 </div>
-                <div className="col-4">
-                    <img src={cakes} className="category-img" alt="cakes category" width="300px" />
+                <div className="col">
+                    <img src={cakes} className="category-img img-fluid" alt="cakes category" />
                 </div>
-                <div className="col-4">
-                    <img src={brews} className="category-img" alt="brews category" width="300px" />
+                <div className="col">
+                    <img src={brews} className="category-img img-fluid" alt="brews category" />
                 </div>
             </div>
         </div>
