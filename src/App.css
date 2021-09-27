@@ -1,3 +1,17 @@
 .App-header {
   background-color: #fff;
 }
+hr {
+  border: 1px solid #000;
+  margin-left: 30px;
+  margin-right: 30px;
+  opacity: 1;
+}
+
+/*Responsive Styles*/
+
+@media (max-width: 460px) {
+  .App-logo {
+    width: 225px;
+  }
+}
