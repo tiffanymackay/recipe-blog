@@ -1,10 +1,9 @@
 import Navigation from "./Navigation"
 import './App.css';
-import Categories from "./Categories";
 
-function App() {
+function Bites() {
   return (
-    <div className="App">
+    <div className="bites">
       <header className="App-header">
         <nav class="navbar navbar-expand-lg navbar-light">
           <Navigation />
@@ -12,7 +11,7 @@ function App() {
           <hr className="d-none d-sm-block" />
       </header>
       <main>
-        <Categories />
+
       </main>
       <hr className="d-none d-sm-block" />
       <footer className="text-center pb-3">

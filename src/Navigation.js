@@ -19,7 +19,7 @@ export default function Navigation() {
                     <a className="nav-link" href="/">about</a>
                     </li>
                     <li className="nav-item">
-                    <a className="nav-link" href="/">bites</a>
+                    <a className="nav-link" href="bites.html">bites</a>
                     </li>
                     <li className="nav-item">
                     <a className="nav-link" href="/">cakes</a>

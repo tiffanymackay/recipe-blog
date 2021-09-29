@@ -19,7 +19,7 @@ hr {
     width: 225px;
   }
   .col {
-    display:block !important;
+    display: block !important;
     flex: 0 0 0%;
   }
 }
