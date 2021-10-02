@@ -5,6 +5,9 @@ import brews from "./brews.png";
 import "./Categories.css";
 
 export default function Categories() {
+    const apiKey = "0f82e3ff04ab4cf2a9af682d8fa7b3d5";
+    const apiUrl = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=chocolate&number=10&apiKey=${apiKey}`;
+
     return (
         <>
         <div className="container category-block">
