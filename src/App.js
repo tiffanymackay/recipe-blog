@@ -17,9 +17,10 @@ function App() {
             <hr className="d-none d-sm-block" />
         </header>
         <main>
+
         <Switch>
           <Route path="/bites" component={Bites} />
-          <Categories />
+          <Categories recipe="chocolate" />
         </Switch>
         </main>
         <hr className="d-none d-sm-block" />

@@ -1,15 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import bites from "./bites.png";
 import cakes from "./cakes.png";
 import brews from "./brews.png";
 import "./Categories.css";
 
 export default function Categories() {
-    const apiKey = "0f82e3ff04ab4cf2a9af682d8fa7b3d5";
-    const apiUrl = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=chocolate&number=10&apiKey=${apiKey}`;
+    let [search, getSearch] = useState("");
 
-    return (
+    const apiKey = "e8676c8266aadaf43d24ffa925e4def1";
+    const apiId = "d4c0f14c";
+    const apiUrl = `https://api.edamam.com/search?q=${search}&dishType=Desserts&app_id=${apiId}&app_key=${apiKey}`;
+    
+
+    const handleResponse = async () => {
+        const result = await axios.get(apiUrl);
+        console.log(result);
+        getSearch("");
+    }
+
+    const onChange = (e) => {
+        getSearch(e.target.value);
+    }
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+        handleResponse();
+    }
+        return (
         <>
+            <div class="container mx-auto py-4">
+                <form className="form-inline mx-auto">
+                        <div className="row">
+                            <div className="col-9">
+                                <input onChange={onChange} value={search} type="text" className="form-control" placeholder="Search for a dessert" /> 
+                            </div>
+                            <div className="col-1">
+                                <button onClick={onSubmit} type="submit" className="btn btn-dark">Submit</button>
+                            </div>
+                        </div>
+                </form>
+            </div>
+
         <div className="container category-block">
             <div className="row">
                 <div className="col">

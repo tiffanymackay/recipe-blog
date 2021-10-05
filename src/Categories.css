@@ -3,6 +3,9 @@
     display: flex;
     justify-content: space-around;
 }
+form {
+    max-width: 350px;
+  }
 
 .category-tag {
     font-weight: bold;
