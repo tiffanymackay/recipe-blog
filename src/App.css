@@ -12,11 +12,20 @@ hr {
   opacity: 1;
 }
 
+
 /*Responsive Styles*/
 
 @media (max-width: 500px) {
   .App-logo {
     width: 225px;
+  }
+
+  .navbar-brand{
+    max-width: 50%;
+  }
+  main form {
+    max-width: 80%;
+    margin: 0px !important;
   }
   .col {
     display: block !important;

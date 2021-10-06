@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Recipe from "./Recipe";
-import { v4 as uuidv4 } from "uuid";
+import { v4 as uuidv4 } from 'uuid';
 import "./Categories.css";
 
-export default function Categories() {
+export default function Categories(props) {
     let [search, getSearch] = useState("");
     let [recipes, setRecipes] = useState([])
 
@@ -15,9 +15,13 @@ export default function Categories() {
 
     const handleResponse = async () => {
         const result = await axios.get(apiUrl);
+        if (result.data.more === false) {
+            alert("Oops! We can't find any recipes using your search query! Please try another term.");
+        } else {
         setRecipes(result.data.hits);
         console.log(result);
         getSearch("");
+        }
     }
 
     const onChange = (e) => {
@@ -30,11 +34,11 @@ export default function Categories() {
     }
         return (
         <>
-            <div class="container mx-auto py-4">
+            <div class="container mx-auto">
                 <form className="form-inline mx-auto">
                         <div className="row">
                             <div className="col-9">
-                                <input onChange={onChange} value={search} type="text" className="form-control" placeholder="Search for a dessert" /> 
+                                <input onChange={onChange} value={search} type="text" className="form-control" placeholder="Search a dessert" /> 
                             </div>
                             <div className="col-1">
                                 <button onClick={onSubmit} type="submit" className="btn btn-dark">Submit</button>
@@ -44,10 +48,11 @@ export default function Categories() {
             </div>
 
         <div className="container category-block">
-                    {recipes !==[] && recipes.map(recipe =>
-                    <Recipe key={uuidv4} recipe={recipe} />)}
+                    {recipes !==[] && recipes.map(recipe  =>
+                    <Recipe key={uuidv4()} recipe={recipe} />)
+                    }
         </div>
-        <div className="container text-center py-2"><button className="btn btn-dark">View More Recipes</button></div>
+        <div className="container text-center py-2"><a href="/About" className="btn btn-dark">About</a></div>
         </>
     );
 }

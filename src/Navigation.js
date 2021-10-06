@@ -23,10 +23,7 @@ export default function Navigation() {
                         <a className="nav-link" href="/">about</a>
                         </li>
                         <li className="nav-item">
-                        <a className="nav-link" href="/bites">bites</a>
-                        </li>
-                        <li className="nav-item">
-                        <a className="nav-link" href="/">brews</a>
+                        <a className="nav-link" href="/">social</a>
                         </li>
                     </ul>
                 </div>

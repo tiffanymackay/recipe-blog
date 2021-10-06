@@ -1,0 +1,10 @@
+.about-photo {
+    max-width: 350px;
+}
+
+
+@media (max-width: 500px) {
+    .about-photo {
+        max-width: 50%;
+    }
+  }

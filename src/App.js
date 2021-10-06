@@ -1,12 +1,12 @@
 import Navigation from "./Navigation"
 import './App.css';
 import Categories from "./Categories";
-import Bites from "./Bites";
+import About from "./About";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 
 
-function App() {
+export default function App() {
   return (
     <Router>
       <div className="App">
@@ -19,7 +19,7 @@ function App() {
         <main>
 
         <Switch>
-          <Route path="/bites" component={Bites} />
+          <Route path="/about" component={About} />
           <Categories recipe="chocolate" />
         </Switch>
         </main>
@@ -33,5 +33,3 @@ function App() {
      </Router>
   );
 }
-
-export default App;
