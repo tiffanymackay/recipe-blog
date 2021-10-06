@@ -5,6 +5,12 @@
 
 @media (max-width: 500px) {
     .about-photo {
-        max-width: 50%;
+        max-width: 90%;
+    }
+    .row {
+        justify-content: center;
+    }
+    main {
+        text-align: center !important;
     }
   }
