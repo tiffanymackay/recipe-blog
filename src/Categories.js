@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
-import bites from "./bites.png";
-import cakes from "./cakes.png";
-import brews from "./brews.png";
+import Recipe from "./Recipe";
+import { v4 as uuidv4 } from "uuid";
 import "./Categories.css";
 
 export default function Categories() {
     let [search, getSearch] = useState("");
+    let [recipes, setRecipes] = useState([])
 
     const apiKey = "e8676c8266aadaf43d24ffa925e4def1";
     const apiId = "d4c0f14c";
@@ -15,6 +15,7 @@ export default function Categories() {
 
     const handleResponse = async () => {
         const result = await axios.get(apiUrl);
+        setRecipes(result.data.hits);
         console.log(result);
         getSearch("");
     }
@@ -43,20 +44,8 @@ export default function Categories() {
             </div>
 
         <div className="container category-block">
-            <div className="row">
-                <div className="col">
-                    <img src={bites} className="category-img img-fluid" alt="bites category" />
-                    <h2 className="category-tag py-3">Chocolate Cup Bites</h2>
-                </div>
-                <div className="col">
-                    <img src={cakes} className="category-img img-fluid" alt="cakes category" />
-                    <h2 className="category-tag py-3">Chocolate Cake</h2>
-                </div>
-                <div className="col">
-                    <img src={brews} className="category-img img-fluid" alt="brews category" />
-                    <h2 className="category-tag py-3">Hot Chocolate</h2>
-                </div>
-            </div>
+                    {recipes !==[] && recipes.map(recipe =>
+                    <Recipe key={uuidv4} recipe={recipe} />)}
         </div>
         <div className="container text-center py-2"><button className="btn btn-dark">View More Recipes</button></div>
         </>

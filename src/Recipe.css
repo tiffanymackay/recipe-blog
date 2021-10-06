@@ -1,0 +1,9 @@
+.recipe {
+    max-width: 300px;
+    text-align: center;
+}
+h2 {
+    font-size: 1.5rem;
+    height: 60px;
+    margin-top: 50px;
+}
