@@ -5,15 +5,18 @@
 .App-header {
   background-color: #fff;
 }
+button {
+  color: #fff;
+}
 hr {
-  border: 1px solid #000;
+  border: 1px solid #F6A2B0;
   margin-left: 20px;
   margin-right: 20px;
   opacity: 1;
 }
 small a {
   text-decoration: none;
-  color: sienna;
+  color: #B9A486;
   font-weight: bolder;
 }
 
