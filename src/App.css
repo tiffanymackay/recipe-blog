@@ -11,6 +11,11 @@ hr {
   margin-right: 20px;
   opacity: 1;
 }
+small a {
+  text-decoration: none;
+  color: sienna;
+  font-weight: bolder;
+}
 
 
 /*Responsive Styles*/
@@ -25,7 +30,7 @@ hr {
   }
   main form {
     max-width: 80%;
-    margin: 0px !important;
+    margin-left: 0px auto;
   }
   .col {
     display: block !important;

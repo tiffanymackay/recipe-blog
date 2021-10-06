@@ -5,15 +5,25 @@ import { v4 as uuidv4 } from 'uuid';
 import "./Categories.css";
 
 export default function Categories(props) {
-    let [search, getSearch] = useState("");
+    let [keyword, getKeyword] = useState(props.defaultRecipes);
     let [recipes, setRecipes] = useState([])
+    let [loaded, setLoaded] = useState(false);
 
-    const apiKey = "e8676c8266aadaf43d24ffa925e4def1";
-    const apiId = "d4c0f14c";
-    const apiUrl = `https://api.edamam.com/search?q=${search}&dishType=Desserts&app_id=${apiId}&app_key=${apiKey}`;
-    
-
-    const handleResponse = async () => {
+    function handleResponse(result) {
+        if (result.data.more === false) {
+            alert("Oops! We can't find any recipes using your search query! Please try another term.");
+        } else {
+        setRecipes(result.data.hits);
+        console.log(result);
+        }
+    }
+    function search() {
+        const apiKey = "e8676c8266aadaf43d24ffa925e4def1";
+        const apiId = "d4c0f14c";
+        const apiUrl = `https://api.edamam.com/search?q=${keyword}&dishType=Desserts&app_id=${apiId}&app_key=${apiKey}`;
+        axios.get(apiUrl).then(handleResponse);
+    }
+/*     const handleResponse = async () => {
         const result = await axios.get(apiUrl);
         if (result.data.more === false) {
             alert("Oops! We can't find any recipes using your search query! Please try another term.");
@@ -22,37 +32,54 @@ export default function Categories(props) {
         console.log(result);
         getSearch("");
         }
-    }
+    } */
 
     const onChange = (e) => {
-        getSearch(e.target.value);
+        getKeyword(e.target.value);
+    }
+
+    const load = () => {
+        setLoaded(true);
+        search();
     }
 
     const onSubmit = (e) => {
         e.preventDefault();
-        handleResponse();
+        search();
     }
-        return (
-        <>
-            <div class="container mx-auto">
-                <form className="form-inline mx-auto">
-                        <div className="row">
-                            <div className="col-9">
-                                <input onChange={onChange} value={search} type="text" className="form-control" placeholder="Search a dessert" /> 
-                            </div>
-                            <div className="col-1">
-                                <button onClick={onSubmit} type="submit" className="btn btn-dark">Submit</button>
-                            </div>
-                        </div>
-                </form>
-            </div>
+        if (loaded) { 
+            return (
+                <>
+                    <div className="container d-flex justify-content-center">
+                        <form className="form-inline my-auto py-2">
+                                <div className="row">
+                                    <div className="col-9">
+                                        <input onChange={onChange} type="text" className="form-control" placeholder="Search a dessert" /> 
+                                    </div>
+                                    <div className="col-1">
+                                        <button onClick={onSubmit} type="submit" className="btn btn-dark">Submit</button>
+                                    </div>
+                                </div>
+                        </form>
+                    </div>
 
-        <div className="container category-block">
-                    {recipes !==[] && recipes.map(recipe  =>
-                    <Recipe key={uuidv4()} recipe={recipe} />)
-                    }
-        </div>
-        <div className="container text-center py-2"><a href="/About" className="btn btn-dark">About</a></div>
-        </>
-    );
+                <div className="container category-block">
+                            {recipes !==[] && recipes.map(function(recipe, index) {
+                                if (index < 4) {
+                                    return (<Recipe key={uuidv4()} recipe={recipe} />);
+                                } else {
+                                    return null;
+                                }
+                            
+                        })
+                            
+                        }  
+                </div>
+                <div className="container text-center py-2"><a href="/About" className="btn btn-dark">About</a></div>
+                </>
+            );
+                        } else {
+                            load();
+                            return ("Loading...");
+                        }
 }

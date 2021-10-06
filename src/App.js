@@ -11,7 +11,7 @@ export default function App() {
     <Router>
       <div className="App">
         <header className="App-header">
-          <nav class="navbar navbar-expand-lg navbar-light">
+          <nav className="navbar navbar-expand-lg navbar-light">
             <Navigation />
             </nav>
             <hr className="d-none d-sm-block" />
@@ -20,13 +20,14 @@ export default function App() {
 
         <Switch>
           <Route path="/about" component={About} />
-          <Categories recipe="chocolate" />
+          <Categories defaultRecipes="chocolate" />
         </Switch>
         </main>
         <hr className="d-none d-sm-block" />
         <footer className="text-center pb-3">
           <small>
-            All Images Copyright © Tiffany Mackay, 2021. All Rights Reserved
+          This website is designed and coded by UX Web and Brand Designer <a href="https://tiffanymackay.com" target="_blank" rel="noreferrer">Tiffany Mackay</a>, and is <a href="https://github.com/tiffanymackay/responsive-recipe" target="_blank" rel="noreferrer">open-sourced</a>.
+          <br />© 2021 Tiffany Mackay
           </small>
         </footer>
       </div>
