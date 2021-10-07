@@ -7,9 +7,11 @@
     border-radius: 8px;
     
 }
-.btn {
-    background-color: #EAB8AD !important;
+.btn-recipe {
+    color: #fff !important;
+    background-color: #B9A486;
 }
+
 h2 {
     font-size: 1.2rem;
     font-weight: bolder;

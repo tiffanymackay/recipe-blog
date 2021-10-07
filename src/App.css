@@ -5,9 +5,12 @@
 .App-header {
   background-color: #fff;
 }
-button {
+.btn {
   color: #fff;
+  background-color: #F6A2B0;
+  border: none;
 }
+
 hr {
   border: 1px solid #F6A2B0;
   margin-left: 20px;
