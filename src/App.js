@@ -26,9 +26,9 @@ export default function App() {
         <footer className="text-center pb-3">
           <small>
             This website is designed and coded by UX Web and Brand Designer 
-              <a href="https://tiffanymackay.com" target="_blank" rel="noreferrer">
+              <a href="https://tiffanymackay.com" target="_blank" rel="noreferrer">{' '}
                 Tiffany Mackay
-              </a>, and is 
+              </a>, and is {' '}
               <a href="https://github.com/tiffanymackay/responsive-recipe" target="_blank" rel="noreferrer">
                 open-sourced
               </a>.
