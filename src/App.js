@@ -20,7 +20,7 @@ export default function App() {
 
         <Switch>
           <Route path="/about" component={About} />
-          <Categories defaultRecipes="chocolate" />
+          <Categories defaultRecipes="mousse" />
         </Switch>
         </main>
         <hr className="d-none d-sm-block" />
