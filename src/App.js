@@ -32,7 +32,7 @@ export default function App() {
               <a href="https://github.com/tiffanymackay/responsive-recipe" target="_blank" rel="noreferrer">
                 open-sourced
               </a>.
-            <br />© 2021 Tiffany Mackay
+            <br />© 2021 Tiffany Mackay <div id="edamam-badge" data-color="white"></div>
           </small>
         </footer>
       </div>
