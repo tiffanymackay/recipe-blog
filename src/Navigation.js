@@ -20,7 +20,7 @@ export default function Navigation() {
                         <a className="nav-link active" aria-current="page" href="/">home</a>
                         </li>
                         <li className="nav-item">
-                        <a className="nav-link" href="/">about</a>
+                        <a className="nav-link" href="/about">about</a>
                         </li>
                         <li className="nav-item">
                         <a className="nav-link" href="https://github.com/tiffanymackay/responsive-recipe" target="_blank" rel="noreferrer">github</a>

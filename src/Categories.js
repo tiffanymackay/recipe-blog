@@ -14,26 +14,15 @@ export default function Categories(props) {
             alert("Oops! We can't find any recipes using your search query! Please try another term.");
         } else {
         setRecipes(result.data.hits);
-        console.log(result);
         }
     }
-    function search() {
+    const search = () => {
         const apiKey = "e8676c8266aadaf43d24ffa925e4def1";
         const apiId = "d4c0f14c";
         const apiUrl = `https://api.edamam.com/search?q=${keyword}&dishType=Desserts&app_id=${apiId}&app_key=${apiKey}`;
         axios.get(apiUrl).then(handleResponse);
     }
-/*     const handleResponse = async () => {
-        const result = await axios.get(apiUrl);
-        if (result.data.more === false) {
-            alert("Oops! We can't find any recipes using your search query! Please try another term.");
-        } else {
-        setRecipes(result.data.hits);
-        console.log(result);
-        getSearch("");
-        }
-    } */
-
+    
     const onChange = (e) => {
         getKeyword(e.target.value);
     }
@@ -63,23 +52,21 @@ export default function Categories(props) {
                         </form>
                     </div>
 
-                <div className="container category-block">
-                            {recipes !==[] && recipes.map(function(recipe, index) {
-                                if (index < 4) {
-                                    return (<Recipe key={uuidv4()} recipe={recipe} />);
-                                } else {
-                                    return null;
-                                }
-                            
-                        })
-                            
-                        }  
-                </div>
-                <div className="container text-center py-2"><a href="/About" className="btn btn-dark">About</a></div>
+                    <div className="container category-block">
+                        {recipes !==[] && recipes.map(function(recipe, index) {
+                            if (index < 4) {
+                                return (<Recipe key={uuidv4()} recipe={recipe} />);
+                            } else {
+                                return null;
+                                }       
+                            }) 
+                            }  
+                    </div>
+                    <div className="container text-center py-2"><a href="/about" className="btn btn-dark">About</a></div>
                 </>
             );
-                        } else {
-                            load();
-                            return ("Loading...");
-                        }
+                    } else {
+                        load();
+                        return ("Loading...");
+                    }
 }

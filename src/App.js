@@ -17,7 +17,6 @@ export default function App() {
             <hr className="d-none d-sm-block" />
         </header>
         <main>
-
         <Switch>
           <Route path="/about" component={About} />
           <Categories defaultRecipes="mousse" />
@@ -26,8 +25,14 @@ export default function App() {
         <hr className="d-none d-sm-block" />
         <footer className="text-center pb-3">
           <small>
-          This website is designed and coded by UX Web and Brand Designer <a href="https://tiffanymackay.com" target="_blank" rel="noreferrer">Tiffany Mackay</a>, and is <a href="https://github.com/tiffanymackay/responsive-recipe" target="_blank" rel="noreferrer">open-sourced</a>.
-          <br />© 2021 Tiffany Mackay
+            This website is designed and coded by UX Web and Brand Designer 
+              <a href="https://tiffanymackay.com" target="_blank" rel="noreferrer">
+                Tiffany Mackay
+              </a>, and is 
+              <a href="https://github.com/tiffanymackay/responsive-recipe" target="_blank" rel="noreferrer">
+                open-sourced
+              </a>.
+            <br />© 2021 Tiffany Mackay
           </small>
         </footer>
       </div>
