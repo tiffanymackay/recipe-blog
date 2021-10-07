@@ -8,8 +8,8 @@ export default function Categories(props) {
     let [keyword, getKeyword] = useState(props.defaultRecipes);
     let [recipes, setRecipes] = useState([])
     let [loaded, setLoaded] = useState(false);
-
-    function handleResponse(result) {
+    
+    const handleResponse = (result) => {
         if (result.data.more === false) {
             alert("Oops! We can't find any recipes using your search query! Please try another term.");
         } else {
@@ -43,7 +43,7 @@ export default function Categories(props) {
                         <form className="form-inline my-auto py-2">
                                 <div className="row">
                                     <div className="col-9">
-                                        <input onChange={onChange} type="text" className="form-control" placeholder="Search a dessert" /> 
+                                        <input onChange={onChange} type="text" className="form-control" placeholder="Search a dessert" autoFocus={true} /> 
                                     </div>
                                     <div className="col-1">
                                         <button onClick={onSubmit} type="submit" className="btn btn-dark">Submit</button>
